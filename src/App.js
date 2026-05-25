@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Gallery from './components/Gallery';
 import Services from './components/Services';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
@@ -30,6 +31,7 @@ function App() {
       <main>
         <Hero onBookSession={handleOpenModal} />
         <About />
+        <Gallery />
         <Services onBookSession={handleOpenModal} />
         <Features />
         <Testimonials />
