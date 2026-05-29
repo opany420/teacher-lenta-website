@@ -13,7 +13,7 @@ const Services = ({ onBookSession }) => {
           {services.map((service, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg p-6 w-full md:w-1/3">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">{service.title}</h3>
-              <p className="text-4xl font-bold text-indigo-600 mb-4">£{service.price}<span className="text-lg text-gray-500">/hr</span></p>
+              <p className="text-4xl font-bold text-indigo-600 mb-4">${service.price}<span className="text-lg text-gray-500">/hr</span></p>
               <ul className="text-gray-600 mb-6 space-y-2">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-center">

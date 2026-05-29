@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { contactInfo } from '../data/content';
 
@@ -20,38 +19,40 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.parentName || !formData.childGrade || !formData.message) {
+    
+    // Validate all required fields
+    if (!formData.parentName.trim() || !formData.childGrade.trim() || !formData.message.trim()) {
       toast.error('Please fill in all required fields.');
       return;
     }
 
     setIsLoading(true);
 
-    const templateParams = {
-      from_name: formData.parentName,
-      from_email: "Not Provided", // emailjs requires from_email, but our form doesn't have it
-      to_name: "Teacher Lenta",
-      parent_name: formData.parentName,
-      child_grade: formData.childGrade,
-      preferred_mode: formData.preferredMode,
-      message: formData.message,
-    };
+    // Build WhatsApp message
+    const whatsappMessage = `Hello Teacher Lenta! 👋
 
-    emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      templateParams,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    )
-    .then((response) => {
-      toast.success('Message sent successfully!');
-      setFormData({ parentName: '', childGrade: '', preferredMode: 'Online', message: '' });
-    }, (error) => {
-      toast.error('Failed to send message. Please try again.');
-    })
-    .finally(() => {
-      setIsLoading(false);
-    });
+📋 *New Booking Request*
+
+👤 *Parent's Name:* ${formData.parentName}
+🎓 *Child's Grade/Age:* ${formData.childGrade}
+📚 *Preferred Mode:* ${formData.preferredMode}
+💬 *Message:* ${formData.message}
+
+Sent from your website.`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Open WhatsApp
+    window.open(`https://wa.me/254795770464?text=${encodedMessage}`, '_blank');
+
+    // Show success message
+    toast.success('Your message has been sent to Teacher Lenta via WhatsApp!');
+    
+    // Clear form
+    setFormData({ parentName: '', childGrade: '', preferredMode: 'Online', message: '' });
+    
+    setIsLoading(false);
   };
 
   return (
