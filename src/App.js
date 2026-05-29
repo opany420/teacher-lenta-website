@@ -11,6 +11,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 import BookingModal from './components/BookingModal';
+import lenta1 from './assets/lenta1.jpg';
+import lenta2 from './assets/lenta2.jpg';
 import './App.css';
 
 function App() {
@@ -29,8 +31,8 @@ function App() {
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <main>
-        <Hero onBookSession={handleOpenModal} />
-        <About />
+        <Hero onBookSession={handleOpenModal} heroImage={lenta1} />
+        <About aboutImage={lenta2} />
         <Gallery />
         <Services onBookSession={handleOpenModal} />
         <Features />

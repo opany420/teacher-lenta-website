@@ -60,13 +60,6 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-
-        {/* Setup Instructions */}
-        <div className="mt-12 p-6 bg-blue-50 rounded-xl border border-blue-200">
-          <p className="text-sm text-blue-800 text-center">
-            <span className="font-semibold">📸 Setup Instructions:</span> Add your photos to <code className="bg-blue-100 px-2 py-1 rounded">public/assets/photo1.jpg</code> and <code className="bg-blue-100 px-2 py-1 rounded">public/assets/photo2.jpg</code>
-          </p>
-        </div>
       </div>
     </section>
   );

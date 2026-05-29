@@ -5,7 +5,7 @@ export const tutorData = {
   name: "Teacher Lenta",
   bio: "I am a dedicated and experienced tutor with a passion for helping students succeed. I specialize in providing personalized one-on-one and group tutoring sessions, both online and in-person. My goal is to create a supportive and engaging learning environment for every student.",
   contact: {
-    phone: "+263795770464",
+    phone: "+254795770464",
     email: "teacherlenta@gmail.com",
     location: "Nairobi, Kenya"
   }
