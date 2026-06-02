@@ -14,7 +14,7 @@ export const tutorData = {
 export const services = [
   {
     title: "Online Tutoring",
-    price: "7",
+    price: "16",
     features: [
       "Interactive virtual classroom",
       "Flexible scheduling",
@@ -24,7 +24,7 @@ export const services = [
   },
   {
     title: "In-Person Tutoring",
-    price: "10",
+    price: "13",
     features: [
       "Face-to-face interaction",
       "Hands-on learning activities",
