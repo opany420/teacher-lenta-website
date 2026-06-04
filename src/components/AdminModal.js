@@ -128,19 +128,19 @@ export default function AdminModal() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Password
                     </label>
-                    <div className="relative">
+                    <div className="relative flex items-center">
                       <input
                         type={isPasswordVisible ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Enter password"
-                        className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-4 py-3 pr-16 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
                         autoFocus
                       />
                       <button
                         type="button"
                         onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800 text-xl"
+                        className="absolute right-2 p-2 text-gray-600 hover:text-gray-800 text-2xl active:scale-95 transition-transform touch-none"
                         title={isPasswordVisible ? 'Hide password' : 'Show password'}
                       >
                         {isPasswordVisible ? '👁️' : '👁️‍🗨️'}
