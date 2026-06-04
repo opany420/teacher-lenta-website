@@ -71,6 +71,17 @@ export const testimonials = [
   }
 ];
 
+export const tutorials = [
+  {
+    id: 'VIDEO_ID_HERE',
+    title: 'Sample Tutorial'
+  },
+  {
+    id: 'VIDEO_ID_HERE',
+    title: 'Sample Tutorial'
+  }
+];
+
 export const contactInfo = [
     {
         icon: <FaWhatsapp />,
