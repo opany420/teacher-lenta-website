@@ -6,6 +6,7 @@ export default function AdminModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isLive, setIsLive] = useState(false);
   const [classTitle, setClassTitle] = useState('');
   const [meetingUrl, setMeetingUrl] = useState('');
@@ -127,14 +128,24 @@ export default function AdminModal() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Password
                     </label>
-                    <input
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Enter password"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      autoFocus
-                    />
+                    <div className="relative">
+                      <input
+                        type={isPasswordVisible ? 'text' : 'password'}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Enter password"
+                        className="w-full px-4 py-2 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        autoFocus
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800 text-xl"
+                        title={isPasswordVisible ? 'Hide password' : 'Show password'}
+                      >
+                        {isPasswordVisible ? '👁️' : '👁️‍🗨️'}
+                      </button>
+                    </div>
                   </div>
                   <button
                     type="submit"
